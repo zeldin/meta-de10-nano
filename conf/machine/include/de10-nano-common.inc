@@ -2,7 +2,7 @@ PREFERRED_PROVIDER_virtual/kernel ?= "linux-altera-ltsi"
 PREFERRED_VERSION_linux-altera-ltsi ?= "4.14%"
 
 PREFERRED_PROVIDER_virtual/bootloader ?= "u-boot-socfpga"
-PREFERRED_VERSION_u-boot-socfpga = "v2018.03%"
+PREFERRED_VERSION_u-boot-socfpga = "v2019.10%"
 
 UBOOT_CONFIG ??= "de10-nano"
 UBOOT_CONFIG[de10-nano] = "socfpga_de10_nano_defconfig"
