@@ -1,5 +1,5 @@
 PREFERRED_PROVIDER_virtual/kernel ?= "linux-altera-ltsi"
-PREFERRED_VERSION_linux-altera-ltsi ?= "4.9%"
+PREFERRED_VERSION_linux-altera-ltsi ?= "4.14%"
 
 PREFERRED_PROVIDER_virtual/bootloader ?= "u-boot-socfpga"
 PREFERRED_VERSION_u-boot-socfpga = "v2018.03%"
@@ -14,6 +14,12 @@ IMAGE_FSTYPES = "cpio ext3 tar.gz wic"
 IMAGE_OVERHEAD_FACTOR ?= "1.3"
 
 require conf/machine/include/socfpga.inc
+
+IMAGE_BOOT_FILES ?= " \
+	${KERNEL_DEVICETREE} \
+	${KERNEL_IMAGETYPE} \
+	"
+WKS_FILE ?= "sdimage-cyclone5-arria5.wks"
 
 IMAGE_BOOT_FILES_append = "de10-nano.rbf LICENSE.de10-nano.rbf de10_nano_hdmi_config.bin dump_adv7513_edid.bin dump_adv7513_regs.bin STARTUP.BMP STARTUP.BMP.LICENSE boot.scr"
 
